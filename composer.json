@@ -14,7 +14,8 @@
     "exewen",
     "robot",
     "chat",
-    "qyweixin"
+    "qyweixin chat",
+    "dingding chat"
   ],
   "require": {
     "php": ">=7.3",
