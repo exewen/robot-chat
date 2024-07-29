@@ -18,8 +18,8 @@
     "dingding chat"
   ],
   "require": {
-    "php": ">=7.3",
-    "exewen/facades": "^1.0",
+    "php": ">=7.3|^8.0",
+    "exewen/facades": "^1",
     "ext-json": "*"
   },
   "require-dev": {
