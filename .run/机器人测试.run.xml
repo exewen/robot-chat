@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="机器人测试" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+    <TestRunner class="ExewenTest\RobotChat\RobotChatTest" file="$PROJECT_DIR$/tests/RobotChatTest.php" scope="Class" />
+    <method v="2" />
+  </configuration>
+</component>
