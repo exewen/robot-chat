@@ -15,7 +15,7 @@ class RobotChatTest extends Base
      */
     public function testQyWeixin()
     {
-        $response = RobotChatFacade::text('消息通知测试');
+        $response = RobotChatFacade::text('消息通知测试', RobotEnum::DING_DING);
         $this->assertNotEmpty($response);
     }
 
