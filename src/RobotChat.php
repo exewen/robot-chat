@@ -6,6 +6,7 @@ namespace Exewen\RobotChat;
 
 use Exewen\Di\Container;
 use Exewen\Di\Context\ApplicationContext;
+use Exewen\Facades\AppFacade;
 use Exewen\RobotChat\Constants\RobotEnum;
 use Exewen\RobotChat\Contract\RobotChatInterface;
 use Exewen\RobotChat\Exception\RobotChatException;
@@ -54,7 +55,7 @@ class RobotChat
         if (empty($class)) {
             throw new RobotChatException('robot-chat driver must be specified.');
         }
-        $container = ApplicationContext::getContainer();
+        $container = AppFacade::getContainer();
         $container->singleton($class);
         return $container->get($class);
     }
