@@ -21,11 +21,12 @@ class DingDingService extends BaseService
         ];
         $url      = $this->makeDingSignature($this->webhookUrl, $robot);
         $response = $this->httpClient->post($driver, $url, $params);
-        $data     = json_decode($response, true);
+        $result = $response->getBody()->getContents();
+        $data     = json_decode($result, true);
         if ($data['errcode'] != 0) {
-            throw new RobotChatException($response);
+            throw new RobotChatException($result);
         }
-        return $response;
+        return $result;
     }
 
     public function markdown(string $content, string $title = null, string $robot = RobotEnum::DING_DING): string
@@ -40,11 +41,12 @@ class DingDingService extends BaseService
         ];
         $url      = $this->makeDingSignature($this->webhookUrl, $robot);
         $response = $this->httpClient->post($driver, $url, $params);
-        $data     = json_decode($response, true);
+        $result = $response->getBody()->getContents();
+        $data     = json_decode($result, true);
         if ($data['errcode'] != 0) {
-            throw new RobotChatException($response);
+            throw new RobotChatException($result);
         }
-        return $response;
+        return $result;
     }
 
 

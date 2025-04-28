@@ -22,11 +22,12 @@ class QyWeixinService extends BaseService
         ];
         $url      = $this->webhookUrl . '?key=' . $token;
         $response = $this->httpClient->post($driver, $url, $params);
-        $data     = json_decode($response, true);
+        $result = $response->getBody()->getContents();
+        $data     = json_decode($result, true);
         if ($data['errcode'] != 0) {
-            throw new RobotChatException($response);
+            throw new RobotChatException($result);
         }
-        return $response;
+        return $result;
     }
 
     public function markdown(string $content, string $title = null, string $robot = RobotEnum::QY_WEIXIN): string
@@ -41,10 +42,11 @@ class QyWeixinService extends BaseService
         ];
         $url      = $this->webhookUrl . '?key=' . $token;
         $response = $this->httpClient->post($driver, $url, $params);
-        $data     = json_decode($response, true);
+        $result = $response->getBody()->getContents();
+        $data     = json_decode($result, true);
         if ($data['errcode'] != 0) {
-            throw new RobotChatException($response);
+            throw new RobotChatException($result);
         }
-        return $response;
+        return $result;
     }
 }
